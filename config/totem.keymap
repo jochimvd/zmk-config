@@ -77,30 +77,30 @@
         num_layer {
             display-name = "Numerals";
             bindings = <
-        &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT   &none  &none      &none      &none     &none
-        &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL  &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&none   &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH   &none  &none      &none      &none     &none  &none
-                           &kp DOT  &kp N0  &kp MINUS  &none  &none      &none
+       &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT   &none  &none      &none      &none     &none
+       &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL  &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&none  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH   &none  &none      &none      &none     &none     &none
+                          &kp DOT  &kp N0  &kp MINUS  &none  &none      &none
             >;
         };
 
         sym_layer {
             display-name = "Symbols";
             bindings = <
-        &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC   &none  &none      &none      &none     &none
-        &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&none   &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE   &none  &none      &none      &none     &none  &none
-                             &kp LPAR   &kp RPAR   &kp UNDER  &none  &none      &none
+       &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC   &none  &none      &none      &none     &none
+       &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE   &none  &none      &none      &none     &none     &none
+                            &kp LPAR   &kp RPAR   &kp UNDER  &none  &none      &none
             >;
         };
 
         fun_layer {
             display-name = "Function";
             bindings = <
-        &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN        &none  &none      &none      &none     &none
-        &kp F11  &kp F4  &kp F5     &kp F6     &kp SLCK         &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&none   &kp F10  &kp F1  &kp F2     &kp F3     &kp PAUSE_BREAK  &none  &none      &none      &none     &none  &none
-                         &kp K_APP  &kp SPACE  &kp TAB          &none  &none      &none
+                &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN        &none  &none      &none      &none     &none
+                &kp F11  &kp F4  &kp F5     &kp F6     &kp SLCK         &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&studio_unlock  &kp F10  &kp F1  &kp F2     &kp F3     &kp PAUSE_BREAK  &none  &none      &none      &none     &none     &none
+                                 &kp K_APP  &kp SPACE  &kp TAB          &none  &none      &none
             >;
         };
 
