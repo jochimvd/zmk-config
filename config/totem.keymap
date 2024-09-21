@@ -12,104 +12,97 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
-#define Base        0
-#define Nav         1
-#define Sym         2
-#define Fun         3
-#define Game        4
-#define Gameplus    5
-
-&mt {
-    quick-tap-ms = <100>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
-};
+#define BASE        0
+#define NAV         1
+#define MED         2
+#define NUM         3
+#define SYM         4
+#define FUN         5
 
 &lt {
-    tapping-term-ms = <240>;
-    flavor = "balanced";
+    tapping-term-ms = <200>;
     quick-tap-ms = <150>;
+    flavor = "tap-preferred";
 };
 
 / {
     behaviors {
         hm: homerow_mods {
+            label = "Homerow Mod";
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
     };
 
-    combos { compatible = "zmk,combos"; };
-
     keymap {
         compatible = "zmk,keymap";
 
-        Base {
+        base_layer {
             display-name = "Base";
             bindings = <
-              &kp Q       &kp W       &kp E          &kp R         &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
-              &hm LGUI A  &hm LALT S  &hm LCTRL D    &hm LSHIFT F  &kp G        &kp H    &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
-&lt 3 ESCAPE  &kp Z       &kp X       &kp C          &kp V         &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp SLASH           &kp APOSTROPHE
-                                      &mt LCTRL DEL  &lt 1 TAB     &kp SPACE    &kp RET  &lt 2 BSPC   &kp MINUS
+         &kp Q       &kp W       &kp E           &kp R          &kp T      &kp Y        &kp U         &kp I        &kp O       &kp P
+         &hm LGUI A  &hm LALT S  &hm LCTRL D     &hm LSHIFT F   &kp G      &kp H        &hm RSHFT J   &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
+&kp ESC  &kp Z       &kp X       &kp C           &kp V          &kp B      &kp N        &kp M         &kp COMMA    &kp DOT     &kp SLASH           &kp APOSTROPHE
+                                 &lt MEDIA  ESC  &lt NAV SPACE  &lt 0 TAB  &lt SYM RET  &lt NUM BSPC  &lt FUN DEL
             >;
         };
 
-        Nav {
-            display-name = "Nav";
+        nav_layer {
+            display-name = "Navigation";
             bindings = <
-              &kp TILDE       &trans     &kp UP_ARROW  &trans     &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-              &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-&kp LEFT_ALT  &kp LEFT_WIN    &kp MINUS  &trans        &kp PLUS   &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &kp PLUS
-                                         &trans        &trans     &trans      &trans    &trans        &kp DOT
+       &none     &none     &none      &none       &none   &none     &none     &none      &none      &none
+       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &kp CAPS  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+&none  &none     &none     &none      &none       &none   &kp INS   &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
+                           &none      &none       &none   &kp RET   &hp BSPC  &kp DEL
             >;
         };
 
-        Sym {
-            display-name = "Sym";
+        med_layer {
+            display-name = "Media";
             bindings = <
-                &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
-                &trans    &trans  &trans    &trans      &trans         &trans     &trans         &trans           &trans   &trans
-&studio_unlock  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &kp HOME
-                                  &trans    &trans      &trans         &trans     &trans         &trans
+       &none     &none     &none      &none       &none   &none         &none         &none         &none         &none
+       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &none         &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+&none  &none     &none     &none      &none       &none   &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
+                           &none      &none       &none   &kp C_STOP    &hp C_PP      &kp C_MUTE
             >;
         };
 
-        Fun {
-            display-name = "Fun";
+        num_layer {
+            display-name = "Numerals";
             bindings = <
-        &bootloader  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &kp END  &kp F1
-        &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F10
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F20  &kp F7
-                             &trans  &trans  &trans    &trans  &trans  &trans
+        &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT   &none  &none      &none      &none     &none
+        &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL  &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&none   &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH   &none  &none      &none      &none     &none  &none
+                           &kp DOT  &kp N0  &kp MINUS  &none  &none      &none
             >;
         };
 
-        Gaming {
-            display-name = "Gaming";
+        sym_layer {
+            display-name = "Symbols";
             bindings = <
-            &kp Z           &kp X  &kp C      &kp V         &sl 5     &trans  &trans  &trans  &trans  &trans
-            &kp TAB         &kp Q  &kp W      &kp E         &kp R     &trans  &trans  &trans  &trans  &trans
-&kp ESCAPE  &kp LEFT_SHIFT  &kp A  &kp S      &kp D         &kp F     &trans  &trans  &trans  &trans  &trans  &trans
-                                   &kp LCTRL  &kp LEFT_ALT  &trans    &trans  &trans  &trans
+        &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC   &none  &none      &none      &none     &none
+        &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&none   &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE   &none  &none      &none      &none     &none  &none
+                             &kp LPAR   &kp RPAR   &kp UNDER  &none  &none      &none
             >;
         };
 
-        Gaming+ {
-            display-name = "Gaming+";
+        fun_layer {
+            display-name = "Function";
             bindings = <
-        &kp F10  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp T     &kp RA(RC(Y))  &kp RA(RC(U))  &trans  &trans  &kp LC(RA(DEL))
-        &kp L    &kp O         &kp Y         &kp K         &kp G     &kp F5         &trans         &trans  &trans  &trans
-&trans  &to 0    &trans        &trans        &trans        &trans    &trans         &trans         &trans  &trans  &trans           &kp LA(F4)
-                               &kp J         &kp I         &kp M     &trans         &trans         &trans
+        &kp F12  &kp F7  &kp F8     &kp F9     &kp PSCRN        &none  &none      &none      &none     &none
+        &kp F11  &kp F4  &kp F5     &kp F6     &kp SLCK         &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&none   &kp F10  &kp F1  &kp F2     &kp F3     &kp PAUSE_BREAK  &none  &none      &none      &none     &none  &none
+                         &kp K_APP  &kp SPACE  &kp TAB          &none  &none      &none
             >;
         };
+
     };
 };
