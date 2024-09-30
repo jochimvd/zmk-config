@@ -61,13 +61,18 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // jz gq m  p  v   ;: .& /* "? '!
+        // r  s  n  d  b   ,| a  e  i  h  
+        // x  f  l  c  w   -+ u  o  y  k  
+        //             t   ␣  
+
         base_layer {
             display-name = "Base";
             bindings = <
-         &kp J       &kp G       &kp M        &kp P         &kp V        &kp SEMI     &kp DOT      &kp SLASH     &kp DQT     &kp APOS
-         &hm LGUI R  &hm LALT S  &hm LCTRL N  &hm LSHIFT D  &kp B        &kp COMMA    &hm RSHFT A  &hm RCTRL E   &hm RALT I  &hm RGUI H
-&kp ESC  &kp X       &kp F       &kp L        &kp C         &kp W        &kp MINUS    &kp U        &kp O         &kp Y       &kp K       &kp ESC
-                                 &lt MED ESC  &lt NAV T     &lt NUM TAB  &lt SYM RET  &lt 0 SPACE  &lt FUN BSPC
+         &kp J       &kp G       &kp M        &kp P         &kp V         &kp SEMI     &kp DOT      &kp SLASH     &kp DQT     &kp APOS
+         &hm LGUI R  &hm LALT S  &hm LCTRL N  &hm LSHIFT D  &kp B         &kp COMMA    &hm RSHFT A  &hm RCTRL E   &hm RALT I  &hm RGUI H
+&kp ESC  &kp X       &kp F       &kp L        &kp C         &kp W         &kp MINUS    &kp U        &kp O         &kp Y       &kp K       &kp ESC
+                                 &lt MED DEL  &lt NAV T     &lt NUM BSPC  &lt SYM RET  &lt 0 SPACE  &lt FUN TAB
             >;
         };
 
