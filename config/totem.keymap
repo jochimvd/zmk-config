@@ -33,14 +33,14 @@
         compatible = "zmk,combos";
         combo_z {
             timeout-ms = <50>;
-            key-positions = <0 1>;  // J G
+            key-positions = <6 7>;  // L+D
             layers = <BASE>;
             bindings = <&kp Z>;
         };
 
         combo_q {
             timeout-ms = <50>;
-            key-positions = <1 3>;  // G P
+            key-positions = <7 8>;  // D+P
             layers = <BASE>;
             bindings = <&kp Q>;
         };
@@ -66,13 +66,28 @@
         // x  f  l  c  w   -+ u  o  y  k  
         //             t   ␣  
 
+//         base_layer {
+//             display-name = "Base";
+//             bindings = <
+//          &kp J       &kp G       &kp M        &kp P         &kp V         &kp SEMI     &kp DOT      &kp SLASH     &kp DQT     &kp APOS
+//          &hm LGUI R  &hm LALT S  &hm LCTRL N  &hm LSHIFT D  &kp B         &kp COMMA    &hm RSHFT A  &hm RCTRL E   &hm RALT I  &hm RGUI H
+// &kp ESC  &kp X       &kp F       &kp L        &kp C         &kp W         &kp MINUS    &kp U        &kp O         &kp Y       &kp K       &kp ESC
+//                                  &lt MED DEL  &lt NAV T     &lt NUM BSPC  &lt SYM RET  &lt 0 SPACE  &lt FUN TAB
+//             >;
+//         };
+
+        // jz gq m  p  v   ;: .& /* "? '!
+        // r  s  n  d  b   ,| a  e  i  h  
+        // x  f  l  c  w   -+ u  o  y  k  
+        //             t   ␣  
+
         base_layer {
             display-name = "Base";
             bindings = <
-         &kp J       &kp G       &kp M        &kp P         &kp V         &kp SEMI     &kp DOT      &kp SLASH     &kp DQT     &kp APOS
-         &hm LGUI R  &hm LALT S  &hm LCTRL N  &hm LSHIFT D  &kp B         &kp COMMA    &hm RSHFT A  &hm RCTRL E   &hm RALT I  &hm RGUI H
-&kp ESC  &kp X       &kp F       &kp L        &kp C         &kp W         &kp MINUS    &kp U        &kp O         &kp Y       &kp K       &kp ESC
-                                 &lt MED DEL  &lt NAV T     &lt NUM BSPC  &lt SYM RET  &lt 0 SPACE  &lt FUN TAB
+         &kp B       &kp Y       &kp O        &kp U          &kp SEMI      &kp X        &kp L        &kp D        &kp P       &kp F
+         &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA     &kp K        &hm RSHFT H  &hm RCTRL T  &hm RALT N  &hm RGUI S
+&kp ESC  &kp SLASH   &kp EQUAL   &kp APOS     &kp DOT        &kp MINUS     &kp J        &kp M        &kp G        &kp W       &kp V       &kp ESC
+                                 &lt MED TAB  &lt NAV SPACE  &lt NUM BSPC  &lt SYM RET  &lt 0 R      &lt FUN DEL
             >;
         };
 
