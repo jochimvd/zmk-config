@@ -84,10 +84,10 @@
         base_layer {
             display-name = "Base";
             bindings = <
-         &kp B       &kp Y       &kp O        &kp U          &kp SEMI      &kp X        &kp L        &kp D        &kp P       &kp F
-         &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA     &kp K        &hm RSHFT H  &hm RCTRL T  &hm RALT N  &hm RGUI S
-&kp ESC  &kp SLASH   &kp EQUAL   &kp APOS     &kp DOT        &kp MINUS     &kp J        &kp M        &kp G        &kp W       &kp V       &kp ESC
-                                 &lt MED TAB  &lt NAV SPACE  &lt NUM BSPC  &lt SYM RET  &lt 0 R      &lt FUN DEL
+         &kp B       &kp Y       &kp O        &kp U          &kp SEMI       &kp X         &kp L        &kp D        &kp P       &kp F
+         &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA      &kp K         &hm RSHFT H  &hm RCTRL T  &hm RALT N  &hm RGUI S
+&kp ESC  &kp SLASH   &kp EQUAL   &kp APOS     &kp DOT        &kp MINUS      &kp J         &kp M        &kp G        &kp W       &kp V       &kp ESC
+                                 &lt MED TAB  &lt NAV SPACE  &lt NUM RET    &lt SYM BSPC  &lt 0 R      &lt FUN DEL
             >;
         };
 
@@ -97,7 +97,7 @@
        &none     &none     &none      &none       &none   &none     &none      &none      &none      &none
        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &kp CAPS  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
 &none  &none     &none     &none      &none       &none   &kp INS   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
-                           &none      &none       &none   &kp RET   &kp SPACE  &kp BSPC
+                           &none      &none       &none   &none     &none      &none
             >;
         };
 
