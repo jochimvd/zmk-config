@@ -78,6 +78,41 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
+
+        comma_m: comma_morph {  // tap: comma | shift + tap: semicolon
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_m: dot_morph {  // tap: dot | shift + tap: colon
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        qmark_m: questionmark_morph {  // tap: question mark | shift + tap: exclamation mark
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp QMARK>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        slash_m: slash_morph {  // tap: slash | shift + tap: backslash
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bspc_m: backspace_morph {  // tap: backspace | shift + tap: delete
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -86,10 +121,10 @@
         base_layer {
             display-name = "Base";
             bindings = <
-         &kp B       &kp Y       &kp O        &kp U          &kp SEMI       &kp X         &kp L        &kp D        &kp P       &kp F
-         &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA      &kp K         &hm RSHFT H  &hm RCTRL T  &hm RALT N  &hm RGUI S
-&kp ESC  &kp SLASH   &kp EQUAL   &kp APOS     &kp DOT        &kp MINUS      &kp J         &kp M        &kp G        &kp W       &kp V       &kp ESC
-                                 &lt MED TAB  &lt NAV SPACE  &lt NUM RET    &lt SYM BSPC  &lt 0 R      &lt FUN DEL
+         &kp B       &kp Y       &kp O        &kp U          &kp EQUAL      &kp X         &kp L        &kp D        &kp P       &kp F
+         &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp APOS       &kp K         &hm RSHFT H  &hm RCTRL T  &hm RALT N  &hm RGUI S
+&kp ESC  &slash_m    &qmark_m    &comma_m     &dot_m         &kp MINUS      &kp J         &kp M        &kp G        &kp W       &kp V       &kp ESC
+                                 &lt MED TAB  &lt NAV SPACE  &lt NUM RET    &lt SYM BSPC  &lt 0 R      &lt FUN ESC
             >;
         };
 
