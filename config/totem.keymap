@@ -44,6 +44,27 @@
             layers = <BASE>;
             bindings = <&kp Q>;
         };
+
+        combo_copy {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            layers = <BASE>;
+            bindings = <&kp K_COPY>;
+        };
+
+        combo_cut {
+            timeout-ms = <50>;
+            key-positions = <22 24>;
+            layers = <BASE>;
+            bindings = <&kp K_CUT>;
+        };
+
+        combo_paste {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            layers = <BASE>;
+            bindings = <&kp K_PASTE>;
+        };
     };
 
     behaviors {
