@@ -182,10 +182,10 @@
         game_layer {
             display-name = "Gaming";
             bindings = <
-          &kp RET   &kp N7  &kp N8     &kp N9     &kp PSCRN   &none  &none      &none      &none     &none
-          &kp LALT  &kp N1  &kp N2     &kp N3     &kp ESC     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&to BASE  &kp N0    &kp N4  &kp N5     &kp N6     &kp TAB     &none  &none      &none      &none     &none     &none
-                            &kp LCTRL  &kp SPACE  &kp LSHIFT  &none  &none      &none
+          &kp RET    &kp N7  &kp N8     &kp N9     &kp PSCRN   &none  &none      &none      &none     &none
+          &kp LCTRL  &kp N1  &kp N2     &kp N3     &kp ESC     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&to BASE  &kp N0     &kp N4  &kp N5     &kp N6     &kp TAB     &none  &none      &none      &none     &none     &none
+                             &kp LALT   &kp SPACE  &kp LSHIFT  &none  &none      &none
             >;
         };
 
