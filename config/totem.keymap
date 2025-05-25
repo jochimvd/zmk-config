@@ -114,6 +114,27 @@
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        min_m: minus_morph {  // tap: minus | shift + tap: plus
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp PLUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        div_m: divide_morph {  // tap: forward slash | shift + tap: asterisk
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp ASTRK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        par_m: paren_morph {  // tap: left parenthesis | shift + tap: right parenthesis
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -132,10 +153,10 @@
         num_layer {
             display-name = "Numerals";
             bindings = <
-          &none     &none     &none      &none       &none   &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT
-          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH
-&to GAME  &none     &none     &none      &none       &none   &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL   &none
-                              &none      &none       &none   &kp MINUS  &kp N0  &kp DOT
+          &none     &none     &none      &none       &none   &min_m  &kp N7    &kp N8     &kp N9  &kp CARET
+          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
+&to GAME  &none     &none     &none      &none       &none   &div_m  &kp N4    &kp N5     &kp N6  &kp HASH   &par_m
+                              &none      &none       &none   &dot_m  &comma_m  &kp EQUAL
             >;
         };
 
