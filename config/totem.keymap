@@ -16,10 +16,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE        0
-#define NAV         1
-#define MED         2
-#define NUM         3
-#define SYM         4
+#define NUM         1
+#define SYM         2
+#define NAV         3
+#define MED         4
 #define FUN         5
 #define GAME        6
 
@@ -166,6 +166,26 @@
        &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 &none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE   &none  &none      &none      &none     &none     &none
                             &kp LPAR   &kp RPAR   &kp UNDER  &none  &none      &none
+            >;
+        };
+
+        nav_layer {
+            display-name = "Navigation";
+            bindings = <
+       &none     &none     &none      &none       &none   &none       &none     &none      &none      &none
+       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &caps_word  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+&none  &none     &none     &none      &none       &none   &kp INS     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
+                           &none      &none       &none   &none       &kp DEL   &none
+            >;
+        };
+
+        med_layer {
+            display-name = "Media";
+            bindings = <
+          &none     &none     &none      &none       &none   &none         &none         &none         &none         &none
+          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &out OUT_USB  &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+&to GAME  &none     &none     &none      &none       &none   &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
+                              &none      &none       &none   &kp C_STOP    &kp C_PP      &kp C_MUTE
             >;
         };
 
