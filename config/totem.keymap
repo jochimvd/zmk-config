@@ -135,6 +135,34 @@
             bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        lpb_m: left_paren_left_bracket_morph {  // tap: left parenthesis | shift + tap: left bracket
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rpb_m: right_paren_right_bracket_morph {  // tap: right parenthesis | shift + tap: right bracket
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lblt_m: left_brace_less_than_morph {  // tap: left brace | shift + tap: less than
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rbgt_m: right_brace_greater_than_morph {  // tap: right brace | shift + tap: greater than
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBRC>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -163,10 +191,10 @@
         sym_layer {
             display-name = "Symbols";
             bindings = <
-       &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC   &none  &none      &none      &none     &none
-       &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE   &none  &none      &none      &none     &none     &none
-                            &kp LPAR   &kp RPAR   &kp UNDER  &none  &none      &none
+       &kp GRAVE  &none      &lblt_m   &rbgt_m   &kp PIPE   &none  &none      &none      &none     &none
+       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+&none  &kp TILDE  &kp CARET  &kp DLLR  &kp HASH  &kp PRCNT  &none  &none      &none      &none     &none     &none
+                             &none     &none     &none      &none  &none      &none
             >;
         };
 
