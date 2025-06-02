@@ -172,7 +172,7 @@
             display-name = "Base";
             bindings = <
          &kp B       &kp Y       &kp O        &kp U         &kp EQUAL      &kp X      &kp L          &kp D        &kp P       &kp F
-         &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A  &kp APOS       &kp K      &hm RSHFT H    &hm RCTRL T  &hm RALT N  &hm RGUI S
+         &hm LALT C  &hm LGUI I  &hm LCTRL E  &hm LSHIFT A  &kp APOS       &kp K      &hm RSHFT H    &hm RCTRL T  &hm RGUI N  &hm RALT S
 &kp ESC  &slash_m    &qmark_m    &comma_m     &dot_m        &kp MINUS      &kp J      &kp M          &kp G        &kp W       &kp V       &kp ESC
                                  &lt MED TAB  &lt NAV RET   &lt NUM SPACE  &lt SYM R  &lt GAME BSPC  &lt FUN ESC
             >;
