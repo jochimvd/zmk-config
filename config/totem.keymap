@@ -181,20 +181,20 @@
         num_layer {
             display-name = "Numerals";
             bindings = <
-          &none     &none     &none      &none      &none   &min_m  &kp N7    &kp N8     &kp N9  &kp CARET
-          &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none   &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
-&to GAME  &none     &none     &none      &none      &none   &div_m  &kp N4    &kp N5     &kp N6  &kp HASH   &par_m
-                              &none      &none      &none   &dot_m  &comma_m  &kp EQUAL
+          &none     &none     &none      &none      &none     &min_m  &kp N7    &kp N8     &kp N9  &kp CARET
+          &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &sk RALT  &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
+&to GAME  &none     &none     &none      &none      &none     &div_m  &kp N4    &kp N5     &kp N6  &kp HASH   &par_m
+                              &none      &none      &none     &dot_m  &comma_m  &kp EQUAL
             >;
         };
 
         sym_layer {
             display-name = "Symbols";
             bindings = <
-       &kp GRAVE  &none      &lblt_m   &rbgt_m   &kp PIPE   &none  &none      &none      &none     &none
-       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &none  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
-&none  &kp TILDE  &kp CARET  &kp DLLR  &kp HASH  &kp PRCNT  &none  &none      &none      &none     &none     &none
-                             &none     &none     &none      &none  &none      &none
+       &kp GRAVE  &none      &lblt_m   &rbgt_m   &kp PIPE   &none     &none      &none      &none     &none
+       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &sk RALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
+&none  &kp TILDE  &kp CARET  &kp DLLR  &kp HASH  &kp PRCNT  &none     &none      &none      &none     &none     &none
+                             &none     &none     &none      &none     &none      &none
             >;
         };
 
