@@ -171,20 +171,20 @@
         base_layer {
             display-name = "Base";
             bindings = <
-         &kp B       &kp Y       &kp O        &kp U         &kp EQUAL      &kp X      &kp L          &kp D        &kp P       &kp F
-         &hm LALT C  &hm LGUI I  &hm LCTRL E  &hm LSHIFT A  &kp APOS       &kp K      &hm RSHFT H    &hm RCTRL T  &hm RGUI N  &hm RALT S
-&kp ESC  &slash_m    &qmark_m    &comma_m     &dot_m        &kp MINUS      &kp J      &kp M          &kp G        &kp W       &kp V       &kp ESC
-                                 &lt MED TAB  &lt NAV RET   &lt NUM SPACE  &lt SYM R  &lt GAME BSPC  &lt FUN ESC
+         &kp B       &kp Y       &kp O        &kp U        &kp EQUAL      &kp X      &kp L          &kp D        &kp P       &kp F
+         &hm LALT C  &hm LGUI I  &hm LCTRL E  &hm LSHFT A  &kp APOS       &kp K      &hm LSHFT H    &hm LCTRL T  &hm LGUI N  &hm LALT S
+&kp ESC  &slash_m    &qmark_m    &comma_m     &dot_m       &kp MINUS      &kp J      &kp M          &kp G        &kp W       &kp V       &kp ESC
+                                 &lt MED TAB  &lt NAV RET  &lt NUM SPACE  &lt SYM R  &lt GAME BSPC  &lt FUN ESC
             >;
         };
 
         num_layer {
             display-name = "Numerals";
             bindings = <
-          &none     &none     &none      &none       &none   &min_m  &kp N7    &kp N8     &kp N9  &kp CARET
-          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
-&to GAME  &none     &none     &none      &none       &none   &div_m  &kp N4    &kp N5     &kp N6  &kp HASH   &par_m
-                              &none      &none       &none   &dot_m  &comma_m  &kp EQUAL
+          &none     &none     &none      &none      &none   &min_m  &kp N7    &kp N8     &kp N9  &kp CARET
+          &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none   &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
+&to GAME  &none     &none     &none      &none      &none   &div_m  &kp N4    &kp N5     &kp N6  &kp HASH   &par_m
+                              &none      &none      &none   &dot_m  &comma_m  &kp EQUAL
             >;
         };
 
@@ -192,7 +192,7 @@
             display-name = "Symbols";
             bindings = <
        &kp GRAVE  &none      &lblt_m   &rbgt_m   &kp PIPE   &none  &none      &none      &none     &none
-       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &none  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
 &none  &kp TILDE  &kp CARET  &kp DLLR  &kp HASH  &kp PRCNT  &none  &none      &none      &none     &none     &none
                              &none     &none     &none      &none  &none      &none
             >;
@@ -201,20 +201,20 @@
         nav_layer {
             display-name = "Navigation";
             bindings = <
-       &none     &none     &none      &none       &none   &none       &none     &none      &none      &none
-       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &caps_word  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-&none  &none     &none     &none      &none       &none   &kp INS     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-                           &none      &none       &none   &none       &kp DEL   &none
+       &none     &none     &none      &none      &none   &none       &none     &none      &none      &none
+       &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none   &caps_word  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+&none  &none     &none     &none      &none      &none   &kp INS     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
+                           &none      &none      &none   &none       &kp DEL   &none
             >;
         };
 
         med_layer {
             display-name = "Media";
             bindings = <
-       &none     &none     &none      &none       &none   &none         &none         &none         &none         &none
-       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &none   &out OUT_USB  &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
-&none  &none     &none     &none      &none       &none   &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
-                           &none      &none       &none   &kp C_STOP    &kp C_PP      &kp C_MUTE
+       &none     &none     &none      &none      &none   &none         &none         &none         &none         &none
+       &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none   &out OUT_USB  &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+&none  &none     &none     &none      &none      &none   &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
+                           &none      &none      &none   &kp C_STOP    &kp C_PP      &kp C_MUTE
             >;
         };
 
@@ -222,7 +222,7 @@
             display-name = "Function";
             bindings = <
                 &kp F12  &kp F7  &kp F8     &kp F9  &kp PSCRN        &none  &none      &none      &none     &none
-                &kp F11  &kp F4  &kp F5     &kp F6  &kp SLCK         &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+                &kp F11  &kp F4  &kp F5     &kp F6  &kp SLCK         &none  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
 &studio_unlock  &kp F10  &kp F1  &kp F2     &kp F3  &kp PAUSE_BREAK  &none  &none      &none      &none     &none     &none
                                  &kp K_APP  &none   &none            &none  &none      &none
             >;
@@ -231,10 +231,10 @@
         game_layer {
             display-name = "Gaming";
             bindings = <
-          &kp RET    &kp N9  &kp N8     &kp N7     &kp PSCRN   &none  &none      &none      &none     &none
-          &kp LCTRL  &kp N3  &kp N2     &kp N1     &kp ESC     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&to BASE  &kp N0     &kp N6  &kp N5     &kp N4     &kp TAB     &none  &none      &none      &none     &none     &none
-                             &kp LALT   &kp SPACE  &kp LSHIFT  &none  &none      &none
+          &kp RET    &kp N9  &kp N8     &kp N7     &kp PSCRN  &none  &none      &none      &none     &none
+          &kp LCTRL  &kp N3  &kp N2     &kp N1     &kp ESC    &none  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
+&to BASE  &kp N0     &kp N6  &kp N5     &kp N4     &kp TAB    &none  &none      &none      &none     &none     &none
+                             &kp LALT   &kp SPACE  &kp LSHFT  &none  &none      &none
             >;
         };
 
