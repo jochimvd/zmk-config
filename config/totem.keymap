@@ -165,16 +165,21 @@
         };
     };
 
+// Gallium v1
+//   b l d c v  j y o u '
+//   n r t s g  p h a e i
+// - x q m w z  k f . , ? /
+
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
             display-name = "Base";
             bindings = <
-         &kp B       &kp Y       &kp O        &kp U        &kp EQUAL      &kp X      &kp L          &kp D        &kp P       &kp F
-         &hm LALT C  &hm LGUI I  &hm LCTRL E  &hm LSHFT A  &kp APOS       &kp K      &hm LSHFT H    &hm LCTRL T  &hm LGUI N  &hm LALT S
-&kp ESC  &slash_m    &qmark_m    &comma_m     &dot_m       &kp MINUS      &kp J      &kp M          &kp G        &kp W       &kp V       &kp ESC
-                                 &lt FUN TAB  &lt NAV RET  &lt NUM SPACE  &lt SYM R  &lt GAME BSPC  &lt MED ESC
+           &kp B       &kp L       &kp D        &kp C        &kp V        &kp J          &kp Y         &kp O         &kp U       &kp APOS
+           &hm LGUI N  &hm LALT R  &hm LCTRL T  &hm LSHFT S  &kp G        &kp P          &hm LSHFT H   &hm LCTRL A   &hm LALT E  &hm LGUI I
+&kp MINUS  &kp X       &kp Q       &kp M        &kp W        &kp Z        &kp K          &kp F         &dot_m        &comma_m    &qmark_m    &slash_m
+                                   &lt FUN TAB  &lt NAV ESC  &lt NUM RET  &lt SYM SPACE  &lt MED BSPC  &lt GAME DEL
             >;
         };
 
@@ -182,7 +187,7 @@
             display-name = "Numerals";
             bindings = <
           &none     &none     &none      &none      &none     &min_m  &kp N7    &kp N8     &kp N9  &kp CARET
-          &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &sk RALT  &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
+          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &sk RALT  &kp N0  &kp N1    &kp N2     &kp N3  &kp PRCNT
 &to GAME  &none     &none     &none      &none      &none     &div_m  &kp N4    &kp N5     &kp N6  &kp HASH   &par_m
                               &none      &none      &none     &dot_m  &comma_m  &kp EQUAL
             >;
@@ -192,7 +197,7 @@
             display-name = "Symbols";
             bindings = <
        &kp GRAVE  &none      &lblt_m   &rbgt_m   &kp PIPE   &none     &none      &none      &none     &none
-       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &sk RALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
+       &kp AT     &kp ASTRK  &lpb_m    &rpb_m    &kp AMPS   &sk RALT  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 &none  &kp TILDE  &kp CARET  &kp DLLR  &kp HASH  &kp PRCNT  &none     &none      &none      &none     &none     &none
                              &none     &none     &none      &none     &none      &none
             >;
@@ -202,7 +207,7 @@
             display-name = "Navigation";
             bindings = <
        &none     &none     &none      &none      &none   &none       &none     &none      &none      &none
-       &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none   &caps_word  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
+       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &caps_word  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
 &none  &none     &none     &none      &none      &none   &kp INS     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
                            &none      &none      &none   &none       &kp DEL   &none
             >;
@@ -212,7 +217,7 @@
             display-name = "Media";
             bindings = <
             &none         &none         &kp C_VOL_UP  &none         &none         &none  &none      &none      &none     &none
-            &none         &kp C_PREV    &kp C_VOL_DN  &kp C_NEXT    &out OUT_USB  &none  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
+            &none         &kp C_PREV    &kp C_VOL_DN  &kp C_NEXT    &out OUT_USB  &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 &bt BT_CLR  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &out OUT_BLE  &none  &none      &none      &none     &none     &none
                                         &kp C_STOP    &kp C_MUTE    &kp C_PP      &none  &none      &none
             >;
@@ -222,7 +227,7 @@
             display-name = "Function";
             bindings = <
        &none     &none     &none      &none      &none   &kp PSCRN        &kp F7  &kp F8  &kp F9  &kp F12
-       &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHFT  &none   &kp SLCK         &kp F1  &kp F2  &kp F3  &kp F11
+       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &kp SLCK         &kp F1  &kp F2  &kp F3  &kp F11
 &none  &none     &none     &none      &none      &none   &kp PAUSE_BREAK  &kp F4  &kp F5  &kp F6  &kp F10  &studio_unlock
                            &none      &none      &none   &kp K_APP        &none   &none
             >;
@@ -232,7 +237,7 @@
             display-name = "Gaming";
             bindings = <
           &kp RET    &kp N9  &kp N8     &kp N7     &kp PSCRN  &none  &none      &none      &none     &none
-          &kp LCTRL  &kp N3  &kp N2     &kp N1     &kp ESC    &none  &kp LSHFT  &kp LCTRL  &kp LGUI  &kp LALT
+          &kp LCTRL  &kp N3  &kp N2     &kp N1     &kp ESC    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 &to BASE  &kp N0     &kp N6  &kp N5     &kp N4     &kp TAB    &none  &none      &none      &none     &none     &none
                              &kp LALT   &kp SPACE  &kp LSHFT  &none  &none      &none
             >;
