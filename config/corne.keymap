@@ -39,7 +39,6 @@
             flavor = "tap-preferred";
             tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP>;
-            require-prior-idle-ms = <150>;  // not in Selenium: never a mod while typing fast
             bindings = <&kp>, <&kp>;
         };
 
