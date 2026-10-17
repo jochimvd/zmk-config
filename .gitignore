@@ -1,0 +1,9 @@
+# Local builds (./build.sh): west workspace, build trees and firmware images
+/.west/
+/zmk/
+/zephyr/
+/modules/
+/bootloader/
+/tools/
+/build/
+/firmware/
