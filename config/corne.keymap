@@ -12,7 +12,7 @@
 #define BASE        0
 #define SYM         1
 #define VIMNAV      2
-#define NUMROW      3
+#define NUM         3
 #define FNMEDIA     4
 #define GAME        5
 
@@ -166,7 +166,7 @@
 //   Tab  q w e r t   y u i o p  Bspc
 //   Esc  a s d f g   h j k l ;  Ret
 //   ⇧    z x c v b   n m , . /  ⇧
-//    ⇧ Bspc/VimNav Esc/FnMedia   Ret/NumRow Spc/VimNav Sym
+//    ⇧ Bspc/VimNav Esc/Num   Ret/FnMedia Spc/VimNav Sym
 
     keymap {
         compatible = "zmk,keymap";
@@ -177,7 +177,7 @@
 &kp TAB    &kp Q  &kp W       &kp E        &kp R       &kp T            &kp Y          &kp U       &kp I        &kp O       &kp P     &kp BSPC
 &kp ESC    &kp A  &hm LALT S  &hm LCTRL D  &hm LGUI F  &kp G            &kp H          &hm LGUI J  &hm LCTRL K  &hm LALT L  &kp SEMI  &kp RET
 &kp LSHFT  &kp Z  &kp X       &kp C        &kp V       &kp B            &kp N          &kp M       &kp COMMA    &kp DOT     &kp FSLH  &kp RSHFT
-                              &shift_caps  &sc VIMNAV BSPC  &sc FNMEDIA ESC  &sc NUMROW RET  &lt VIMNAV SPACE  &bsl SYM SYM
+                              &shift_caps  &sc VIMNAV BSPC  &sc NUM ESC      &sc FNMEDIA RET  &lt VIMNAV SPACE  &bsl SYM SYM
             >;
         };
 
@@ -187,7 +187,7 @@
 &trans  &kp CARET  &kp LT    &kp GT    &kp DLLR   &kp PRCNT          &kp AT    &kp AMPS  &kp STAR   &kp SQT    &kp GRAVE  &trans
 &trans  &kp LBRC   &kp LPAR  &kp RPAR  &kp RBRC   &kp EQUAL          &kp BSLH  &kp PLUS  &kp MINUS  &kp FSLH   &kp DQT    &trans
 &trans  &kp TILDE  &kp LBKT  &kp RBKT  &kp UNDER  &kp HASH           &kp PIPE  &kp EXCL  &kp SEMI   &kp COLON  &kp QMARK  &trans
-                             &bsl NUMROW NUMROW  &kp SPACE  &kp RET  &trans    &trans    &trans
+                             &bsl NUM NUM  &kp SPACE  &kp RET  &trans    &trans    &trans
             >;
         };
 
@@ -201,13 +201,13 @@
             >;
         };
 
-        numrow_layer {  // numbers on the home row, shifted numbers above them
-            display-name = "NumRow";
+        num_layer {  // numpad on the right, plain mods on the left (e.g. GUI + number for workspaces)
+            display-name = "Numpad";
             bindings = <
-&trans  &kp RS(N1)  &kp RS(N2)  &kp RS(N3)  &kp RS(N4)  &kp RS(N5)          &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &trans
-&trans  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&trans  &none       &none       &none       &none       &none               &kp MINUS   &kp COMMA   &kp DOT     &kp COLON   &kp FSLH    &trans
-                                &trans      &kp RS(SPACE)  &trans           &trans      &kp LS(SPACE)  &kp RALT
+&trans  &none      &none      &none      &none      &none          &kp MINUS  &kp N7  &kp N8  &kp N9  &kp FSLH   &trans
+&trans  &kp LSHFT  &kp LALT   &kp LCTRL  &kp LGUI   &none          &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT    &trans
+&trans  &none      &none      &none      &none      &none          &kp COMMA  &kp N4  &kp N5  &kp N6  &kp COLON  &trans
+                              &trans     &trans     &trans         &trans     &trans  &trans
             >;
         };
 
