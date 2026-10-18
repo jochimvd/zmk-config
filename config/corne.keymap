@@ -187,13 +187,14 @@
         };
     };
 
-// Selenium, timeless HRM: pinky Shift (shortcuts only), ring Alt, middle Ctrl, index GUI (most used mod with Hyprland);
+// Selenium, timeless HRM: pinky Alt, ring Ctrl, middle Shift (shortcuts only), index GUI (most used mod with Hyprland),
+// so Ctrl+Alt, Ctrl+Shift and Shift+GUI are adjacent fingers; the same mod order on every layer;
 // type capitals with the sticky Shift thumb; Sym twice = sticky AltGr (altgr-intl accents)
 //
 //   Tab  q w e r t   y u i o p  Bspc
 //   Esc  a s d f g   h j k l ;  Ret
 //   ⇧    z x c v b   n m , . /  ⇧
-//    ⇧ Bspc/VimNav Esc/Num   Ret/FnMedia Spc/VimNav Sym
+//    ⇧ Esc/Num Bspc/VimNav   Spc/VimNav Ret/FnMedia Sym
 
     keymap {
         compatible = "zmk,keymap";
@@ -202,9 +203,9 @@
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q        &kp W        &kp E         &kp R        &kp T            &kp Y            &kp U        &kp I         &kp O        &kp P           &kp BSPC
-&kp ESC    &hml LSHFT A  &hml LALT S  &hml LCTRL D  &hml LGUI F  &kp G            &kp H            &hmr LGUI J  &hmr LCTRL K  &hmr LALT L  &hmr LSHFT SEMI  &kp RET
+&kp ESC    &hml LALT A   &hml LCTRL S  &hml LSHFT D  &hml LGUI F  &kp G            &kp H            &hmr LGUI J  &hmr LSHFT K  &hmr LCTRL L  &hmr LALT SEMI   &kp RET
 &kp LSHFT  &kp Z        &kp X        &kp C         &kp V        &kp B            &kp N            &kp M        &kp COMMA     &kp DOT      &kp FSLH        &kp RSHFT
-                                     &shift_caps   &sc VIMNAV BSPC  &sc NUM ESC  &sc FNMEDIA RET  &lt VIMNAV SPACE  &bsl SYM SYM
+                                     &shift_caps   &sc NUM ESC  &sc VIMNAV BSPC  &lt VIMNAV SPACE  &sc FNMEDIA RET  &bsl SYM SYM
             >;
         };
 
@@ -214,17 +215,17 @@
 &trans  &kp CARET  &kp LT    &kp GT    &kp DLLR   &kp PRCNT          &kp AT    &kp AMPS  &kp STAR   &kp SQT    &kp GRAVE  &trans
 &trans  &kp LBRC   &kp LPAR  &kp RPAR  &kp RBRC   &kp EQUAL          &kp BSLH  &kp PLUS  &kp MINUS  &kp FSLH   &kp DQT    &trans
 &trans  &kp TILDE  &kp LBKT  &kp RBKT  &kp UNDER  &kp HASH           &kp PIPE  &kp EXCL  &kp SEMI   &kp COLON  &kp QMARK  &trans
-                             &bsl NUM NUM  &kp SPACE  &kp RET  &trans    &trans    &lbsk RALT RALT
+                             &bsl NUM NUM  &kp RET  &kp SPACE  &trans    &trans    &lbsk RALT RALT
             >;
         };
 
-        vimnav_layer {
+        vimnav_layer {  // left home row: sticky mods (tap = one-shot, hold = held), same order as the HRMs
             display-name = "VimNav";
             bindings = <
-&trans  &none      &kp LC(W)  &vim_prev    &vim_next  &none             &kp HOME          &kp PG_DN         &kp PG_UP       &kp END            &kp DEL  &trans
-&trans  &kp LC(A)  &kp LC(S)  &kp LS(TAB)  &kp TAB    &none             &kp LEFT          &kp DOWN          &kp UP          &kp RIGHT          &none    &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)    &kp LC(V)  &kp LC(LS(Z))     &msc SCRL_LEFT    &msc SCRL_DOWN    &msc SCRL_UP    &msc SCRL_RIGHT    &none    &trans
-                   &mt LSHFT CAPS  &sc FNMEDIA DEL  &trans              &trans            &mo FNMEDIA       &lbsk RALT RALT
+&trans  &none           &kp LC(W)         &vim_prev         &vim_next       &kp LS(TAB)       &kp HOME          &kp PG_DN         &kp PG_UP       &kp END            &kp DEL  &trans
+&trans  &bsk LALT LALT  &bsk LCTRL LCTRL  &bsk LSHFT LSHFT  &bsk LGUI LGUI  &kp TAB           &kp LEFT          &kp DOWN          &kp UP          &kp RIGHT          &none    &trans
+&trans  &kp LC(Z)       &kp LC(X)         &kp LC(C)         &kp LC(V)       &kp LC(LS(Z))     &msc SCRL_LEFT    &msc SCRL_DOWN    &msc SCRL_UP    &msc SCRL_RIGHT    &none    &trans
+                   &mt LSHFT CAPS  &trans  &sc FNMEDIA DEL              &mo FNMEDIA       &trans            &lbsk RALT RALT
             >;
         };
 
@@ -232,7 +233,7 @@
             display-name = "Numpad";
             bindings = <
 &trans  &none      &none      &none      &none      &none          &kp MINUS  &kp N7  &kp N8  &kp N9  &kp FSLH   &trans
-&trans  &kp LSHFT  &kp LALT   &kp LCTRL  &kp LGUI   &none          &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT    &trans
+&trans  &kp LALT   &kp LCTRL  &kp LSHFT  &kp LGUI   &none          &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT    &trans
 &trans  &none      &none      &none      &none      &none          &kp COMMA  &kp N4  &kp N5  &kp N6  &kp COLON  &trans
                               &trans     &trans     &trans         &trans     &trans  &trans
             >;
@@ -242,9 +243,9 @@
             display-name = "FnMedia";
             bindings = <
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &out OUT_USB          &bt BT_SEL 2    &kp C_NEXT       &kp C_VOL_UP      &kp C_BRI_UP        &kp SLCK         &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &to GAME              &bt_sel1_clr    &hmr LGUI C_PP   &hmr LCTRL C_MUTE &hmr LALT C_AL_LOCK &hmr LSHFT PSCRN  &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &to GAME              &bt_sel1_clr    &hmr LGUI C_PP   &hmr LSHFT C_MUTE &hmr LCTRL C_AL_LOCK &hmr LALT PSCRN  &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE          &bt BT_SEL 0    &kp C_PREV       &kp C_VOL_DN      &kp C_BRI_DN        &kp INS          &trans
-                         &trans   &bootloader  &trans            &trans          &sys_reset       &studio_unlock
+                         &sys_reset  &bootloader  &trans         &trans          &trans           &studio_unlock
             >;
         };
 
