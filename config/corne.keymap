@@ -17,9 +17,18 @@
 #define GAME        5
 
 // Timing is key!
-#define TAPPING_TERM        300  // tap-preferred hold-taps: home row mods, Space, sticky Shift/Sym
+#define TAPPING_TERM        300  // tap-preferred hold-taps: Space, sticky Shift/Sym
 #define SHORT_TAPPING_TERM  150  // hold-preferred hold-taps: Backspace, Esc, Enter
 #define QUICK_TAP           200
+
+#define HRM_TAPPING_TERM    280  // home row mods (timeless, see hml/hmr)
+#define HRM_QUICK_TAP       175
+#define HRM_PRIOR_IDLE      150
+
+// Key positions, for the home row mods' hold-trigger-key-positions
+#define KEYS_L  0  1  2  3  4  5 12 13 14 15 16 17 24 25 26 27 28 29
+#define KEYS_R  6  7  8  9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
+#define THUMBS 36 37 38 39 40 41
 
 &lt {
     tapping-term-ms = <TAPPING_TERM>;
@@ -36,12 +45,29 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        // urob's timeless home row mods: a mod only when the next key is on the other hand
+        // (or a thumb), and never while typing fast
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM>;
-            quick-tap-ms = <QUICK_TAP>;
+            flavor = "balanced";
+            tapping-term-ms = <HRM_TAPPING_TERM>;
+            quick-tap-ms = <HRM_QUICK_TAP>;
+            require-prior-idle-ms = <HRM_PRIOR_IDLE>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HRM_TAPPING_TERM>;
+            quick-tap-ms = <HRM_QUICK_TAP>;
+            require-prior-idle-ms = <HRM_PRIOR_IDLE>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
 
@@ -161,7 +187,8 @@
         };
     };
 
-// Selenium HRM, reordered: pinky -, ring Alt, middle Ctrl, index GUI (most used mod with Hyprland); Shift and Sym are sticky thumb keys
+// Selenium, timeless HRM: pinky Shift (shortcuts only), ring Alt, middle Ctrl, index GUI (most used mod with Hyprland);
+// type capitals with the sticky Shift thumb; Sym twice = sticky AltGr (altgr-intl accents)
 //
 //   Tab  q w e r t   y u i o p  Bspc
 //   Esc  a s d f g   h j k l ;  Ret
@@ -174,20 +201,20 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&kp TAB    &kp Q  &kp W       &kp E        &kp R       &kp T            &kp Y          &kp U       &kp I        &kp O       &kp P     &kp BSPC
-&kp ESC    &kp A  &hm LALT S  &hm LCTRL D  &hm LGUI F  &kp G            &kp H          &hm LGUI J  &hm LCTRL K  &hm LALT L  &kp SEMI  &kp RET
-&kp LSHFT  &kp Z  &kp X       &kp C        &kp V       &kp B            &kp N          &kp M       &kp COMMA    &kp DOT     &kp FSLH  &kp RSHFT
-                              &shift_caps  &sc VIMNAV BSPC  &sc NUM ESC      &sc FNMEDIA RET  &lt VIMNAV SPACE  &bsl SYM SYM
+&kp TAB    &kp Q        &kp W        &kp E         &kp R        &kp T            &kp Y            &kp U        &kp I         &kp O        &kp P           &kp BSPC
+&kp ESC    &hml LSHFT A  &hml LALT S  &hml LCTRL D  &hml LGUI F  &kp G            &kp H            &hmr LGUI J  &hmr LCTRL K  &hmr LALT L  &hmr LSHFT SEMI  &kp RET
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp V        &kp B            &kp N            &kp M        &kp COMMA     &kp DOT      &kp FSLH        &kp RSHFT
+                                     &shift_caps   &sc VIMNAV BSPC  &sc NUM ESC  &sc FNMEDIA RET  &lt VIMNAV SPACE  &bsl SYM SYM
             >;
         };
 
-        sym_layer {
+        sym_layer {  // Sym again: sticky AltGr via the base layer (&sl ignores mods, so Sym would stay on for the next key)
             display-name = "Symbols";
             bindings = <
 &trans  &kp CARET  &kp LT    &kp GT    &kp DLLR   &kp PRCNT          &kp AT    &kp AMPS  &kp STAR   &kp SQT    &kp GRAVE  &trans
 &trans  &kp LBRC   &kp LPAR  &kp RPAR  &kp RBRC   &kp EQUAL          &kp BSLH  &kp PLUS  &kp MINUS  &kp FSLH   &kp DQT    &trans
 &trans  &kp TILDE  &kp LBKT  &kp RBKT  &kp UNDER  &kp HASH           &kp PIPE  &kp EXCL  &kp SEMI   &kp COLON  &kp QMARK  &trans
-                             &bsl NUM NUM  &kp SPACE  &kp RET  &trans    &trans    &trans
+                             &bsl NUM NUM  &kp SPACE  &kp RET  &trans    &trans    &lbsk RALT RALT
             >;
         };
 
@@ -215,7 +242,7 @@
             display-name = "FnMedia";
             bindings = <
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &out OUT_USB          &bt BT_SEL 2    &kp C_NEXT       &kp C_VOL_UP      &kp C_BRI_UP        &kp SLCK         &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &to GAME              &bt_sel1_clr    &hm LGUI C_PP    &hm LCTRL C_MUTE  &hm LALT C_AL_LOCK  &hm LSHFT PSCRN  &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &to GAME              &bt_sel1_clr    &hmr LGUI C_PP   &hmr LCTRL C_MUTE &hmr LALT C_AL_LOCK &hmr LSHFT PSCRN  &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE          &bt BT_SEL 0    &kp C_PREV       &kp C_VOL_DN      &kp C_BRI_DN        &kp INS          &trans
                          &trans   &bootloader  &trans            &trans          &sys_reset       &studio_unlock
             >;
