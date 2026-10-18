@@ -161,7 +161,7 @@
         };
     };
 
-// Selenium HRM: pinky -, ring GUI, middle Ctrl, index Alt; Shift and Sym are sticky thumb keys
+// Selenium HRM, GUI and Ctrl swapped (GUI is the most used mod with Hyprland): pinky -, ring Ctrl, middle GUI, index Alt; Shift and Sym are sticky thumb keys
 //
 //   Tab  q w e r t   y u i o p  Bspc
 //   Esc  a s d f g   h j k l ;  Ret
@@ -175,7 +175,7 @@
             display-name = "Base";
             bindings = <
 &kp TAB    &kp Q  &kp W       &kp E        &kp R       &kp T            &kp Y          &kp U       &kp I        &kp O       &kp P     &kp BSPC
-&kp ESC    &kp A  &hm LGUI S  &hm LCTRL D  &hm LALT F  &kp G            &kp H          &hm LALT J  &hm LCTRL K  &hm LGUI L  &kp SEMI  &kp RET
+&kp ESC    &kp A  &hm LCTRL S  &hm LGUI D  &hm LALT F  &kp G            &kp H          &hm LALT J  &hm LGUI K  &hm LCTRL L  &kp SEMI  &kp RET
 &kp LSHFT  &kp Z  &kp X       &kp C        &kp V       &kp B            &kp N          &kp M       &kp COMMA    &kp DOT     &kp FSLH  &kp RSHFT
                               &shift_caps  &sc VIMNAV BSPC  &sc FNMEDIA ESC  &sc NUMROW RET  &lt VIMNAV SPACE  &bsl SYM SYM
             >;
@@ -215,7 +215,7 @@
             display-name = "FnMedia";
             bindings = <
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &out OUT_USB          &bt BT_SEL 2    &kp C_NEXT       &kp C_VOL_UP      &kp C_BRI_UP        &kp SLCK         &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &to GAME              &bt_sel1_clr    &hm LALT C_PP    &hm LCTRL C_MUTE  &hm LGUI C_AL_LOCK  &hm LSHFT PSCRN  &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &to GAME              &bt_sel1_clr    &hm LALT C_PP    &hm LGUI C_MUTE  &hm LCTRL C_AL_LOCK  &hm LSHFT PSCRN  &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &out OUT_BLE          &bt BT_SEL 0    &kp C_PREV       &kp C_VOL_DN      &kp C_BRI_DN        &kp INS          &trans
                          &trans   &bootloader  &trans            &trans          &sys_reset       &studio_unlock
             >;
